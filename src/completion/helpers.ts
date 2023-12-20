@@ -45,6 +45,8 @@ const sessionParser = new ExcellentParser('@', [
   'ticket',
   'trigger',
   'resume',
+  'flow',
+  'calendar',
 ]);
 
 // Class-based directive API

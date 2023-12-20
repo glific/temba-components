@@ -26,6 +26,8 @@ const messageParser = new ExcellentParser('@', [
   'fields',
   'globals',
   'urns',
+  'flow',
+  'calendar',
 ]);
 
 const sessionParser = new ExcellentParser('@', [
@@ -137,6 +139,7 @@ export const getCompletions = (
   session: boolean
 ): CompletionOption[] => {
   const parts = (dotQuery || '').split('.');
+
   let currentProps: CompletionProperty[] = session
     ? schema.root
     : schema.root_no_session;
@@ -190,6 +193,7 @@ export const getCompletions = (
       }
     }
   }
+  console.log(currentProps);
 
   return currentProps.map((prop: CompletionProperty) => {
     const name =
